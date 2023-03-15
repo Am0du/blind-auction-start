@@ -1,16 +1,18 @@
 from replit import clear
 from  art import logo
-#HINT: You can call clear() to clear the output in the console.
+
 
 item_auction = input("What's the auction item ")
 bidders = []
 
+#Adds the bidder
 def add_bidders(bidder_name, bidder_bid):
     new_bidder = {}
     new_bidder["Name"] = bidder_name
     new_bidder["Bid"]  = bidder_bid
     bidders.append(new_bidder)
 
+#Finds the highest bidder
 def highest_bidder(bid):
     higgest_bid = 0
     winner = ""
@@ -21,6 +23,7 @@ def highest_bidder(bid):
             
     print(f"The highest bidder is {winner} with a bid of {highest_bid}")
 
+#checks if there's a draw in the bid
 def draw(bidder_draw):
     draw = []
     for bids in bidder_draw:
@@ -31,11 +34,12 @@ def draw(bidder_draw):
 
     if len(draw) > 1:
         print(f"if {draw} appears as winner, please rebid")
-            
+
+#Loops to check if there's another user for bidding 
 another_bidder = True
 while another_bidder is True:
     print(logo)
-    print(f"Welcome to the Secret auction of a {item_auction}")
+    print(f"Welcome to the Secret Auction of a {item_auction}")
     name = input("what is your name?: ")
     bid = int(input("what is your bid?: $"))
     
@@ -49,6 +53,7 @@ while another_bidder is True:
         another_bidder = False
         clear()
 
+#calls the function and outputs the results
 print(logo)
 highest_bidder(bidders)
 draw(bidders)
