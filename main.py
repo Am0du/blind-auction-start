@@ -21,7 +21,7 @@ def highest_bidder(bid):
             highest_bid = bid[i]["Bid"]
             winner = bid[i]["Name"]
             
-    print(f"The highest bidder is {winner} with a bid of {highest_bid}")
+    print(f"The highest bidder is {winner} with a bid of ${highest_bid}")
 
 #checks if there's a draw in the bid
 def draw(bidder_draw):
